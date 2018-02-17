@@ -41,8 +41,31 @@ div.form-paper textarea{
 .task-container{
     display: flex; 
 }
+span.glyphicon-remove-sign{
+    display: none;
+    font-size: 2em;
+    position: absolute;
+    right: 9%;
+    top: 0%;
+}
+.new-task:hover span.glyphicon-remove-sign{
+    display: inline;
+}
 .new-task{
     background: url('../images/notebg.png') no-repeat;
     height: 250px;
     width: 200px;
+    transition-property: opacity;
+    transition-duration: 1.5s;
+    opacity: 0;
+    overflow: hidden;
+}
+.new-task p {
+    margin-top: 2em;
+    padding: 15px 5px 15px 5px;
+    height: 175px;
+    overflow-y: scroll;
+}
+.fade-in{
+    opacity: 1;
 }
