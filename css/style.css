@@ -15,6 +15,44 @@ header{
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     margin: 5px;
 }
+div.form-container{
+    display: flex;
+    justify-content: center;
+    margin: 3% 0 3% 0;
+    height: 30%;
+}
+div.form-paper{
+    background: url('../images/formbg.jpg');
+    width: 85%;
+}
+div.form-paper textarea{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: rgba(0, 0, 0, 1);
+    padding: 1.5em 0;
+    width: 80%;
+}
+
+@media only screen and (min-width: 768px) {
+
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0 ;
+}
+body{
+    background: url('../images/tile.jpg');
+}
+header{
+    padding: 1em;
+    background-blend-mode: lighten;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    margin: 5px;
+}
 h4{
     position: absolute;
     left: 29%;
@@ -33,10 +71,10 @@ div.form-paper textarea{
     background: transparent;
     border: none;
     outline: none;
-    /* height: 100px; */
+    height: 65%;
     color: rgba(0, 0, 0, 1);
     padding: 1.5em 0;
-    width: 50%;
+    width: 80%;
 }
 .task-container{
     display: flex; 
@@ -68,4 +106,8 @@ span.glyphicon-remove-sign{
 }
 .fade-in{
     opacity: 1;
+}
+.fade-out{
+    opacity: 0;
+}
 }
