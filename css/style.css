@@ -108,6 +108,7 @@ div.form-paper textarea{
 .task-container{
     display: flex; 
     justify-content: flex-start;
+    flex-wrap: wrap;
 }
 span.glyphicon-remove-sign{
     display: none;
