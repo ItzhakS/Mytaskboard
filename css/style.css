@@ -86,7 +86,7 @@ span.glyphicon-remove-sign{
 .new-task p {
     padding: 15px 5px 15px 5px;
     height: 175px;
-    overflow-y: scroll;
+    overflow-y: auto;
     font-family: 'Indie Flower', cursive;
     font-size: 1.5em;
 }
@@ -217,7 +217,7 @@ span.glyphicon-remove-sign{
 .new-task p {
     padding: 15px 5px 15px 5px;
     height: 175px;
-    overflow-y: scroll;
+    overflow-y: auto;
     font-size: 1em;
 }
 
