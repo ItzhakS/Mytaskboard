@@ -34,23 +34,39 @@ function Save() {
     }
 
 var taskContainer = document.querySelector('.task-container')
-    function createTask() {
+    function createTask(idx=null) {
         var newTask = document.createElement('div')
         var taskDueDate = document.createElement('div')
         var taskContent = document.createElement('p')
         var taskHeader = document.createElement('h4')
         var dueByHeader = document.createElement('h4')
         newTask.className = 'new-task col-s-12 col-md-4 col-lg-2'
-        newTask.id = 'newTask'+index
         var xIcon = document.createElement('span')
         xIcon.className = 'glyphicon glyphicon-remove-sign'
-        xIcon.id = index
-        var value = localStorage.getItem('note'+ index)
+        if(!idx) {
+            newTask.id = 'newTask'+index
+            var value = localStorage.getItem('note'+ index)
+            taskHeader.innerText = `Task #${index}`
+            xIcon.id = index            
+            
+            
+        } else {
+            newTask.id = 'newTask'+idx
+            var value = localStorage.getItem('note'+ idx)
+            taskHeader.innerText = `Task #${idx}`
+            xIcon.id = idx;            
+        }
+        
         var oNote = JSON.parse(value)
+        dueByHeader.innerText = 'Due By: '
+        dueByHeader.style.display = 'inline'
+        dueByHeader.id = 'dueByHeader'
         taskContent.innerText = oNote.note
         taskDueDate.innerText = oNote.notedate
         newTask.appendChild(xIcon)
+        newTask.appendChild(taskHeader)
         newTask.appendChild(taskContent)
+        newTask.appendChild(dueByHeader)
         newTask.appendChild(taskDueDate)
         console.log(oNote)
         taskContainer.appendChild(newTask)
@@ -84,13 +100,19 @@ function deleteTask(){
         delete newTask
     }, 1000)
 }
-
+document.body.onload = function () {
+    loadData()
+}
 function loadData() {
+    console.log(localStorage.length)
     if (localStorage.length > 0){
-        let key = localStorage.counter
-        // while key 
-        // localStorage.getItem(key)
-        
+        let key = localStorage.getItem('counter')
+        while (key > 0) {
+            let idx = key
+            if(localStorage.getItem('note'+idx))
+                createTask(idx)
+            key--
+        }
     }
     
 }
