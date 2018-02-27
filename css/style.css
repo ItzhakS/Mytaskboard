@@ -38,10 +38,19 @@ span.glyphicon-remove-sign{
     font-size: 2em;
     position: absolute;
     right: 9%;
-    top: 0%;
+    top: 6%;
+    border-radius: 17px;
+    box-shadow: 1px 2px 12px 0px rgba(3, 4, 5, 0.85), inset 1px 2px 0px 0px rgba(3, 4, 5, 0.85);
 }
 .new-task:hover span.glyphicon-remove-sign{
     display: inline;
+}
+.glyphicon-remove-sign:hover{
+    top: 5%;
+}
+.glyphicon-remove-sign:active{
+    top: 6%;
+    box-shadow: 0px 0px 12px 0px rgba(3, 4, 5, 0.85), inset 1px 2px 0px 0px rgba(3, 4, 5, 0.85);
 }
 .new-task{
     background: url('../images/notebg.png') no-repeat;
@@ -61,6 +70,14 @@ span.glyphicon-remove-sign{
 }
 .fade-in{
     opacity: 1;
+}
+.fade-out{
+    animation: fadeAway 1s linear;
+}
+
+@keyframes fadeAway{
+    from {opacity: 1;}
+    to {opacity: 0;}
 }
 
 @media only screen and (min-width: 768px) {
@@ -115,10 +132,19 @@ span.glyphicon-remove-sign{
     font-size: 2em;
     position: absolute;
     right: 9%;
-    top: 0%;
+    top: 6%;
+    border-radius: 17px;
+    box-shadow: 2px 1px 7px 0px rgba(3, 4, 5, 0.85), inset -2px -1px 2px 4px rgba(3, 4, 5, 0.85);
 }
 .new-task:hover span.glyphicon-remove-sign{
     display: inline;
+}
+.glyphicon-remove-sign:hover{
+    top: 5%;
+}
+.glyphicon-remove-sign:active{
+    top: 6%;
+    box-shadow: 0px 0px 0px 0px rgba(3, 4, 5, 0.85);
 }
 .new-task{
     background: url('../images/notebg.png') no-repeat;
@@ -138,8 +164,5 @@ span.glyphicon-remove-sign{
 }
 .fade-in{
     opacity: 1;
-}
-.fade-out{
-    opacity: 0;
 }
 }
